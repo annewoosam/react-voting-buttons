@@ -1,0 +1,43 @@
+<!-- Initial code source credit https://codepen.io/trnkat96/pen/KqPOoX. To make work outside CodePen had to move js to html and add scripts andscript tags and delete duplicate reference to div id. -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script
+      src="https://kit.fontawesome.com/00c761c639.js"
+      crossorigin="anonymous"
+    ></script>
+<body>
+    <div id="root"></div>
+    <script type="text/jsx">
+
+class MyButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 0};
+    this.buttonClicked = this.buttonClicked.bind(this);
+  }
+  
+  buttonClicked(event) {
+    this.setState({value: this.state.value+1});
+  }
+  
+  render() {
+    return (
+    	<div>
+        <div>{this.state.value}</div>
+        <button onClick={this.buttonClicked}>Click</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <MyButton />,
+  document.getElementById('root')
+);
+    </script>
+
+
+</script>
